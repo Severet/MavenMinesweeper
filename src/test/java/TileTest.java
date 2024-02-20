@@ -12,5 +12,11 @@ class TileTest {
         tile.setXpos(tile.getXpos());
         tile.setYpos(tile.getYpos());
         tile.setOwner(game2);
+
+    }
+    @Test
+    void ClickTests() {
+        Tile tile = new Board(1).getTiles()[0][0];
+        tile.getButton().doClick();
     }
 }

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GUI.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">OOPExcercises</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">GUI.java</span></div><h1>GUI.java</h1><pre class="source lang-java linenums">import javax.swing.*;
+import java.awt.*;
+
+public class GUI {
+<span class="nc" id="L5">    private JFrame window = new JFrame(&quot;Minesweeper&quot;);</span>
+    private JPanel difficultyPanel;
+    private ButtonGroup difficultySetting;
+<span class="nc" id="L8">    public GUI() {</span>
+<span class="nc" id="L9">        this.window.setLayout(null);//using no layout managers</span>
+<span class="nc" id="L10">        this.window.setVisible(true);//making the frame visible</span>
+<span class="nc" id="L11">    }</span>
+    public void displayBoard(Board game, int c) { //This method is used for handling console display. The parameter is used only to enable this behaviour
+<span class="nc" id="L13">        boolean boom = false;</span>
+<span class="nc" id="L14">        int remaining = 0;</span>
+<span class="nc bnc" id="L15" title="All 2 branches missed.">        for (Tile[] i : game.getTiles()) {</span>
+<span class="nc" id="L16">            StringBuilder displayString = new StringBuilder();</span>
+<span class="nc bnc" id="L17" title="All 2 branches missed.">            for (Tile j : i) {</span>
+<span class="nc bnc" id="L18" title="All 2 branches missed.">                if (j.getFlagged()) {</span>
+<span class="nc" id="L19">                    displayString.append(&quot;[⚑]&quot;);</span>
+<span class="nc" id="L20">                    remaining++;</span>
+                }
+<span class="nc bnc" id="L22" title="All 2 branches missed.">                else if (!j.getRevealed()) {</span>
+<span class="nc" id="L23">                    displayString.append(&quot;[ ]&quot;);</span>
+<span class="nc" id="L24">                    remaining++;</span>
+<span class="nc bnc" id="L25" title="All 2 branches missed.">                } else if (j.getMine()) {</span>
+<span class="nc" id="L26">                    displayString.append(&quot;[X]&quot;);</span>
+<span class="nc" id="L27">                    boom = true;</span>
+<span class="nc bnc" id="L28" title="All 2 branches missed.">                } else if (j.getRevealed()) {</span>
+<span class="nc" id="L29">                    displayString.append(&quot;[&quot;).append(game.checkNeighbors(j)).append(&quot;]&quot;);</span>
+                } else {
+<span class="nc" id="L31">                    displayString.append(&quot;[?]&quot;); //This should never happen, but prevents the board losing shape in case of error</span>
+                }
+            }
+<span class="nc" id="L34">            System.out.println(displayString);</span>
+        }
+<span class="nc" id="L36">        System.out.println(&quot;\n&quot;);</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">        if (boom) {</span>
+<span class="nc" id="L38">            System.out.println(&quot;▓▓▓ YOU LOSE! :( ▓▓▓&quot;);</span>
+<span class="nc" id="L39">            game.setEnd(true);</span>
+<span class="nc bnc" id="L40" title="All 2 branches missed.">        } else if (remaining == game.getMinecount()) {</span>
+<span class="nc" id="L41">            System.out.println(&quot;▓▓▓ YOU WIN! B) ▓▓▓&quot;);</span>
+<span class="nc" id="L42">            game.setEnd(true);</span>
+        }
+<span class="nc" id="L44">    }</span>
+    public void displayBoard(Board game) {
+<span class="nc" id="L46">        window.getContentPane().removeAll();</span>
+<span class="nc" id="L47">        int l = game.getSize();</span>
+<span class="nc" id="L48">        window.setSize((l*45)+20,(l*45+40));</span>
+<span class="nc" id="L49">        window.revalidate();</span>
+<span class="nc" id="L50">        Tile[][] tiles = game.getTiles();</span>
+<span class="nc" id="L51">        int size = game.getSize();</span>
+<span class="nc bnc" id="L52" title="All 2 branches missed.">        for (int i = 0; i &lt; size; i++) {</span>
+<span class="nc bnc" id="L53" title="All 2 branches missed.">            for (int j = 0; j &lt; size; j++) {</span>
+<span class="nc" id="L54">                window.add(tiles[i][j].getButton());</span>
+                //Each Tile within the supplied Board has its button added to the GUI
+            }
+        }
+<span class="nc" id="L58">        window.repaint();</span>
+<span class="nc" id="L59">    }</span>
+    public void displaySetup() {
+
+<span class="nc" id="L62">        JLabel message = new JLabel(&quot;Please select a Difficulty Level:&quot;);</span>
+<span class="nc" id="L63">        message.setBounds(10,0,200,30);</span>
+
+<span class="nc" id="L65">        this.difficultyPanel = getjPanel(this);</span>
+
+<span class="nc" id="L67">        JButton start = new JButton(&quot;Start&quot;);</span>
+<span class="nc" id="L68">        start.setBounds(120,85,80,30);</span>
+<span class="nc" id="L69">        start.addActionListener(new StartListener(this));</span>
+
+<span class="nc" id="L71">        window.add(message);</span>
+<span class="nc" id="L72">        window.add(this.difficultyPanel);</span>
+<span class="nc" id="L73">        window.add(start);</span>
+<span class="nc" id="L74">        window.setSize(225, 160);</span>
+<span class="nc" id="L75">        window.repaint();</span>
+<span class="nc" id="L76">    }</span>
+
+    private static JPanel getjPanel(GUI game) {
+<span class="nc" id="L79">        JRadioButton easy = new JRadioButton(&quot;Easy&quot;);</span>
+<span class="nc" id="L80">        JRadioButton medium = new JRadioButton(&quot;Medium&quot;);</span>
+<span class="nc" id="L81">        medium.setSelected(true);</span>
+<span class="nc" id="L82">        JRadioButton hard = new JRadioButton(&quot;Hard&quot;);</span>
+
+<span class="nc" id="L84">        ButtonGroup difficulty = new ButtonGroup();</span>
+<span class="nc" id="L85">        difficulty.add(easy);</span>
+<span class="nc" id="L86">        difficulty.add(medium);</span>
+<span class="nc" id="L87">        difficulty.add(hard);</span>
+<span class="nc" id="L88">        game.setDifficultySetting(difficulty);</span>
+
+<span class="nc" id="L90">        JPanel difficultyPanel = new JPanel(new GridLayout(0, 1));</span>
+<span class="nc" id="L91">        difficultyPanel.add(easy);</span>
+<span class="nc" id="L92">        difficultyPanel.add(medium);</span>
+<span class="nc" id="L93">        difficultyPanel.add(hard);</span>
+<span class="nc" id="L94">        difficultyPanel.setBounds(30,30,200,50);</span>
+<span class="nc" id="L95">        return difficultyPanel;</span>
+    }
+    public JPanel getDifficultyPanel() {
+<span class="nc" id="L98">        return this.difficultyPanel;</span>
+    }
+
+    public ButtonGroup getDifficultySetting() {
+<span class="nc" id="L102">        return difficultySetting;</span>
+    }
+    public void setDifficultySetting(ButtonGroup b) {
+<span class="nc" id="L105">        this.difficultySetting = b;</span>
+<span class="nc" id="L106">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

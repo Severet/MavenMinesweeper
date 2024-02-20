@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StartListener.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">OOPExcercises</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">StartListener.java</span></div><h1>StartListener.java</h1><pre class="source lang-java linenums">import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Enumeration;
+
+public class StartListener implements ActionListener {
+    GUI grid;
+<span class="nc" id="L8">    public StartListener(GUI game) {</span>
+<span class="nc" id="L9">        this.grid = game;</span>
+
+<span class="nc" id="L11">    }</span>
+    @Override
+    public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L14">        String selected = &quot;Medium&quot;;</span>
+<span class="nc" id="L15">        ButtonGroup difficulty = grid.getDifficultySetting();</span>
+        Board game;
+<span class="nc bnc" id="L17" title="All 2 branches missed.">        for (Enumeration&lt;AbstractButton&gt; buttons = difficulty.getElements(); buttons.hasMoreElements(); ) {</span>
+<span class="nc" id="L18">            AbstractButton button = buttons.nextElement();</span>
+
+<span class="nc bnc" id="L20" title="All 2 branches missed.">            if (button.isSelected()) {</span>
+<span class="nc" id="L21">                selected = button.getText();</span>
+
+            }
+<span class="nc" id="L24">        }</span>
+<span class="nc bnc" id="L25" title="All 3 branches missed.">        switch (selected) {</span>
+            case &quot;Easy&quot;:
+<span class="nc" id="L27">                game = new Board(9);</span>
+<span class="nc" id="L28">                game.distributeMines(10);</span>
+<span class="nc" id="L29">                break;</span>
+            case &quot;Hard&quot;:
+<span class="nc" id="L31">                game = new Board(20);</span>
+<span class="nc" id="L32">                game.distributeMines(75);</span>
+<span class="nc" id="L33">                break;</span>
+            default:
+<span class="nc" id="L35">                game = new Board(16);</span>
+<span class="nc" id="L36">                game.distributeMines(40);</span>
+                break;
+        }
+<span class="nc" id="L39">        grid.displayBoard(game);</span>
+<span class="nc" id="L40">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

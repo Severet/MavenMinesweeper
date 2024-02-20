@@ -26,11 +26,11 @@ public class Board {
             // Generates a set of coordinates within the bounds of the grid
             try { //Tries to add the coordinates to the hash set
                 pos.add(i);
+                this.minecount++;
             } catch (Exception ignored) {
                 //If the coordinates are a duplicate then the program will not add or crash as the exception is handled
             }
         } while (pos.size()<count); // Continues generating coords and adding them if unique until the count quota has been met
-        this.minecount = count;
         for (int[] m : pos) {
             this.Tiles[m[0]][m[1]].setMine(true); //sets the Mine boolean of the tiles at all generated coordinates to true
         }

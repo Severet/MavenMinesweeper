@@ -2,54 +2,57 @@
 
 <span class="nc" id="L3">public class Main {</span>
     public static void main(String[] args) {
-<span class="nc" id="L5">            GUI display = new GUI();</span>
-<span class="nc" id="L6">            display.displaySetup();</span>
-<span class="nc" id="L7">        }</span>
+<span class="nc" id="L5">        GUI display = new GUI();</span>
+<span class="nc" id="L6">        display.displaySetup();</span>
+<span class="nc" id="L7">    }</span>
+}
+        /*
+        This code was only used for old console implementation:
 
         public void oldMain() {
-<span class="nc" id="L10">            Board game = new Board(7);</span>
-<span class="nc" id="L11">            GUI display = new GUI();</span>
-<span class="nc" id="L12">            game.distributeMines(4);</span>
-<span class="nc" id="L13">            Tile[][] Tiles = game.getTiles();</span>
-<span class="nc" id="L14">            display.displayBoard(game, 1);</span>
-<span class="nc bnc" id="L15" title="All 2 branches missed.">            while (!game.getEnd()) {</span>
-<span class="nc" id="L16">                int xpos = (userInput(&quot;Enter the row of the desired cell: &quot;)-1);</span>
-<span class="nc" id="L17">                int ypos = (userInput(&quot;Enter the column of the desired cell: &quot;)-1);</span>
+            Board game = new Board(7);
+            GUI display = new GUI();
+            game.distributeMines(4);
+            Tile[][] Tiles = game.getTiles();
+            display.displayBoard(game, 1);
+            while (!game.getEnd()) {
+                int xpos = (userInput(&quot;Enter the row of the desired cell: &quot;)-1);
+                int ypos = (userInput(&quot;Enter the column of the desired cell: &quot;)-1);
                 try {
-<span class="nc" id="L19">                    Tile target = Tiles[xpos][ypos];</span>
-<span class="nc bnc" id="L20" title="All 2 branches missed.">                    if (userInput(&quot;Enter '1' if you would like to flag a tile: &quot;) == 1) {</span>
-<span class="nc" id="L21">                        game.flagTile(target);</span>
+                    Tile target = Tiles[xpos][ypos];
+                    if (userInput(&quot;Enter '1' if you would like to flag a tile: &quot;) == 1) {
+                        game.flagTile(target);
                     } else {
-<span class="nc bnc" id="L23" title="All 2 branches missed.">                        if (!target.getFlagged()) {</span>
-<span class="nc" id="L24">                            game.revealTile(target);</span>
+                        if (!target.getFlagged()) {
+                            game.revealTile(target);
                         } else {
-<span class="nc" id="L26">                            System.out.println(&quot;That tile is currently flagged&quot;);</span>
+                            System.out.println(&quot;That tile is currently flagged&quot;);
                         }
                     }
-<span class="nc" id="L29">                    display.displayBoard(game, 1);</span>
-<span class="nc" id="L30">                } catch (Exception e) {</span>
-<span class="nc" id="L31">                    System.out.println(&quot;That tile does not exist&quot;);</span>
-<span class="nc" id="L32">                }</span>
+                    display.displayBoard(game, 1);
+                } catch (Exception e) {
+                    System.out.println(&quot;That tile does not exist&quot;);
+                }
 
-<span class="nc" id="L34">            }</span>
-<span class="nc" id="L35">        }</span>
+            }
+        }
 
     public static int userInput(String Prompt) { //Records user input, uses a supplied prompt
-<span class="nc" id="L38">        Scanner reader = new Scanner(System.in);</span>
-<span class="nc" id="L39">        System.out.print(Prompt);</span>
+        Scanner reader = new Scanner(System.in);
+        System.out.print(Prompt);
         boolean loop;
-<span class="nc" id="L41">        int output = 0;</span>
+        int output = 0;
         do {
-<span class="nc" id="L43">            String input = reader.next();</span>
+            String input = reader.next();
             try {
-<span class="nc" id="L45">                output = Math.abs(Integer.parseInt(input));</span>
-<span class="nc" id="L46">                loop = false;</span>
-<span class="nc" id="L47">            } catch (Exception e) {</span>
-<span class="nc" id="L48">                System.out.println(&quot;Input must be a number&quot;);</span>
-<span class="nc" id="L49">                loop = true;</span>
-<span class="nc" id="L50">            }</span>
-<span class="nc bnc" id="L51" title="All 2 branches missed.">        } while (loop);</span>
-<span class="nc" id="L52">        return output;</span>
+                output = Math.abs(Integer.parseInt(input));
+                loop = false;
+            } catch (Exception e) {
+                System.out.println(&quot;Input must be a number&quot;);
+                loop = true;
+            }
+        } while (loop);
+        return output;
     }
-}
+         */
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

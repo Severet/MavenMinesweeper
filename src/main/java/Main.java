@@ -2,9 +2,12 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-            GUI display = new GUI();
-            display.displaySetup();
-        }
+        GUI display = new GUI();
+        display.displaySetup();
+    }
+}
+        /*
+        This code was only used for old console implementation:
 
         public void oldMain() {
             Board game = new Board(7);
@@ -51,4 +54,4 @@ public class Main {
         } while (loop);
         return output;
     }
-}
+         */

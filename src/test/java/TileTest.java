@@ -1,4 +1,7 @@
+import org.junit.jupiter.api.Test;
+
 class TileTest {
+    @Test
     void TileTests() {
         Board game = new Board(1);
         Tile tile = game.getTiles()[0][0];

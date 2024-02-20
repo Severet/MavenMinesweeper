@@ -2,6 +2,6 @@ GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_
 OOPExcercises,default,Board,8,263,0,24,4,55,2,25,2,13
 OOPExcercises,default,InputListener,108,10,20,0,27,4,15,1,5,1
 OOPExcercises,default,StartListener,68,0,7,0,21,0,6,0,2,0
-OOPExcercises,default,Tile,22,222,0,2,10,28,6,12,6,11
+OOPExcercises,default,Tile,4,240,0,2,2,36,1,17,1,16
 OOPExcercises,default,GUI,317,0,20,0,73,0,18,0,8,0
 OOPExcercises,default,Main,107,0,8,0,36,0,8,0,4,0

@@ -9,39 +9,7 @@ public class GUI {
         this.window.setLayout(null);//using no layout managers
         this.window.setVisible(true);//making the frame visible
     }
-    public void displayBoard(Board game, int c) { //This method is used for handling console display. The parameter is used only to enable this behaviour
-        boolean boom = false;
-        int remaining = 0;
-        for (Tile[] i : game.getTiles()) {
-            StringBuilder displayString = new StringBuilder();
-            for (Tile j : i) {
-                if (j.getFlagged()) {
-                    displayString.append("[⚑]");
-                    remaining++;
-                }
-                else if (!j.getRevealed()) {
-                    displayString.append("[ ]");
-                    remaining++;
-                } else if (j.getMine()) {
-                    displayString.append("[X]");
-                    boom = true;
-                } else if (j.getRevealed()) {
-                    displayString.append("[").append(game.checkNeighbors(j)).append("]");
-                } else {
-                    displayString.append("[?]"); //This should never happen, but prevents the board losing shape in case of error
-                }
-            }
-            System.out.println(displayString);
-        }
-        System.out.println("\n");
-        if (boom) {
-            System.out.println("▓▓▓ YOU LOSE! :( ▓▓▓");
-            game.setEnd(true);
-        } else if (remaining == game.getMinecount()) {
-            System.out.println("▓▓▓ YOU WIN! B) ▓▓▓");
-            game.setEnd(true);
-        }
-    }
+
     public void displayBoard(Board game) {
         window.getContentPane().removeAll();
         int l = game.getSize();
@@ -105,3 +73,39 @@ public class GUI {
         this.difficultySetting = b;
     }
 }
+   /*
+    public void displayBoard(Board game, int c) { //This method is used for handling console display. The parameter is used only to enable this behaviour
+        boolean boom = false;
+        int remaining = 0;
+        for (Tile[] i : game.getTiles()) {
+            StringBuilder displayString = new StringBuilder();
+            for (Tile j : i) {
+                if (j.getFlagged()) {
+                    displayString.append("[⚑]");
+                    remaining++;
+                }
+                else if (!j.getRevealed()) {
+                    displayString.append("[ ]");
+                    remaining++;
+                } else if (j.getMine()) {
+                    displayString.append("[X]");
+                    boom = true;
+                } else if (j.getRevealed()) {
+                    displayString.append("[").append(game.checkNeighbors(j)).append("]");
+                } else {
+                    displayString.append("[?]"); //This should never happen, but prevents the board losing shape in case of error
+                }
+            }
+            System.out.println(displayString);
+        }
+        System.out.println("\n");
+        if (boom) {
+            System.out.println("▓▓▓ YOU LOSE! :( ▓▓▓");
+            game.setEnd(true);
+        } else if (remaining == game.getMinecount()) {
+            System.out.println("▓▓▓ YOU WIN! B) ▓▓▓");
+            game.setEnd(true);
+        }
+    }
+
+     */

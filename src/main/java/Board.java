@@ -22,9 +22,8 @@ public class Board {
         HashSet<int[]> pos = new HashSet<>();
         do {
             int[] i = new int[2];
-            Random r = new Random();
-            i[0] = (r.nextInt(this.size));
-            i[1] = (r.nextInt(this.size));
+            i[0] = (RandomNumber.generateInt(this.size));
+            i[1] = (RandomNumber.generateInt(this.size));
             // Generates a set of coordinates within the bounds of the grid
             try { //Tries to add the coordinates to the hash set
                 pos.add(i);

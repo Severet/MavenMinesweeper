@@ -1,6 +1,7 @@
 Main.class
-InputListener.class
-Tile.class
 Board.class
+InputListener.class
+RandomNumber.class
+Tile.class
 StartListener.class
 GUI.class

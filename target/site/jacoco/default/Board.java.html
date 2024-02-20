@@ -22,106 +22,105 @@ public class Board {
 <span class="fc" id="L22">        HashSet&lt;int[]&gt; pos = new HashSet&lt;&gt;();</span>
         do {
 <span class="fc" id="L24">            int[] i = new int[2];</span>
-<span class="fc" id="L25">            Random r = new Random();</span>
-<span class="fc" id="L26">            i[0] = (r.nextInt(this.size));</span>
-<span class="fc" id="L27">            i[1] = (r.nextInt(this.size));</span>
+<span class="fc" id="L25">            i[0] = (RandomNumber.generateInt(this.size));</span>
+<span class="fc" id="L26">            i[1] = (RandomNumber.generateInt(this.size));</span>
             // Generates a set of coordinates within the bounds of the grid
             try { //Tries to add the coordinates to the hash set
-<span class="fc" id="L30">                pos.add(i);</span>
-<span class="fc" id="L31">                this.minecount++;</span>
-<span class="nc" id="L32">            } catch (Exception ignored) {</span>
+<span class="fc" id="L29">                pos.add(i);</span>
+<span class="fc" id="L30">                this.minecount++;</span>
+<span class="nc" id="L31">            } catch (Exception ignored) {</span>
                 //If the coordinates are a duplicate then the program will not add or crash as the exception is handled
-<span class="fc" id="L34">            }</span>
-<span class="fc bfc" id="L35" title="All 2 branches covered.">        } while (pos.size()&lt;count); // Continues generating coords and adding them if unique until the count quota has been met</span>
-<span class="fc bfc" id="L36" title="All 2 branches covered.">        for (int[] m : pos) {</span>
-<span class="fc" id="L37">            this.Tiles[m[0]][m[1]].setMine(true); //sets the Mine boolean of the tiles at all generated coordinates to true</span>
-<span class="fc" id="L38">        }</span>
-<span class="fc" id="L39">    }</span>
+<span class="fc" id="L33">            }</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        } while (pos.size()&lt;count); // Continues generating coords and adding them if unique until the count quota has been met</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        for (int[] m : pos) {</span>
+<span class="fc" id="L36">            this.Tiles[m[0]][m[1]].setMine(true); //sets the Mine boolean of the tiles at all generated coordinates to true</span>
+<span class="fc" id="L37">        }</span>
+<span class="fc" id="L38">    }</span>
 
 
     public int checkNeighbors(Tile target) { //Used for calculating the number of mines adjacent to a Tile
-<span class="fc" id="L43">        int mines = 0; //represents the number to be displayed on the tile</span>
-<span class="fc" id="L44">        int[][] neighbors = target.getNeighbours();</span>
-<span class="fc bfc" id="L45" title="All 2 branches covered.">        for (int[] neighbor : neighbors) {</span>
+<span class="fc" id="L42">        int mines = 0; //represents the number to be displayed on the tile</span>
+<span class="fc" id="L43">        int[][] neighbors = target.getNeighbours();</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">        for (int[] neighbor : neighbors) {</span>
                 try {
-<span class="fc bfc" id="L47" title="All 2 branches covered.">                    if (checkForMine(neighbor[0],neighbor[1])) {</span>
-<span class="fc" id="L48">                        mines++;</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">                    if (checkForMine(neighbor[0],neighbor[1])) {</span>
+<span class="fc" id="L47">                        mines++;</span>
                         //If a mine is present at the coordinate then increment mines
                     }
                 }
-<span class="fc" id="L52">                catch(Exception ignored) {</span>
+<span class="fc" id="L51">                catch(Exception ignored) {</span>
                     /*
                     Edge tiles would ordinarily check outside the grid and cause an error.
                     This allows such cases to be skipped without issue
                      */
-<span class="fc" id="L57">                }</span>
+<span class="fc" id="L56">                }</span>
             }
-<span class="fc" id="L59">        return mines;</span>
+<span class="fc" id="L58">        return mines;</span>
     }
     public boolean checkForMine(int x, int y) {
-<span class="fc" id="L62">        return this.Tiles[x][y].getMine();</span>
+<span class="fc" id="L61">        return this.Tiles[x][y].getMine();</span>
         //Checks the Tile of a given coordinate for a mine.
     }
 
     public void revealTile(Tile target) { //Reveals a tile. Should that tile have no neighboring mines then all of those tiles are revealed too
-<span class="fc" id="L67">        target.setRevealed(true);</span>
-<span class="fc" id="L68">        revealed++;</span>
-<span class="fc bfc" id="L69" title="All 4 branches covered.">        if (target.getMine() &amp;&amp; this.isFirstClick()) {</span>
-<span class="fc" id="L70">            target.setMine(false);</span>
-<span class="fc" id="L71">            this.firstClick = false;</span>
+<span class="fc" id="L66">        target.setRevealed(true);</span>
+<span class="fc" id="L67">        revealed++;</span>
+<span class="fc bfc" id="L68" title="All 4 branches covered.">        if (target.getMine() &amp;&amp; this.isFirstClick()) {</span>
+<span class="fc" id="L69">            target.setMine(false);</span>
+<span class="fc" id="L70">            this.firstClick = false;</span>
         }
-<span class="fc" id="L73">        target.getButton().setText(String.valueOf(checkNeighbors(target)));</span>
-<span class="fc bfc" id="L74" title="All 2 branches covered.">        if (checkNeighbors(target)==0) { //</span>
-<span class="fc bfc" id="L75" title="All 2 branches covered.">            for (int[] n : target.getNeighbours()) {</span>
+<span class="fc" id="L72">        target.getButton().setText(String.valueOf(checkNeighbors(target)));</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">        if (checkNeighbors(target)==0) { //</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">            for (int[] n : target.getNeighbours()) {</span>
                 try {
-<span class="fc bfc" id="L77" title="All 2 branches covered.">                    if (!this.Tiles[n[0]][n[1]].getRevealed()) {</span>
-<span class="fc" id="L78">                        revealTile(this.Tiles[n[0]][n[1]]);</span>
+<span class="fc bfc" id="L76" title="All 2 branches covered.">                    if (!this.Tiles[n[0]][n[1]].getRevealed()) {</span>
+<span class="fc" id="L77">                        revealTile(this.Tiles[n[0]][n[1]]);</span>
                         //0-Value Tiles are recursively checked until none remain contiguously
                     }
 
-<span class="fc" id="L82">                } catch (Exception ignored) {</span>
+<span class="fc" id="L81">                } catch (Exception ignored) {</span>
                     /*
                     Edge tiles would ordinarily check outside the grid and cause an error.
                     This allows such cases to be skipped without issue
                      */
-<span class="fc" id="L87">                }</span>
+<span class="fc" id="L86">                }</span>
             }
         }
-<span class="fc" id="L90">    }</span>
+<span class="fc" id="L89">    }</span>
     public void flagTile(Tile target) { //swaps the flagged state of a given tile
-<span class="fc bfc" id="L92" title="All 2 branches covered.">        target.setFlagged(!target.getFlagged());</span>
-<span class="fc" id="L93">    }</span>
+<span class="fc bfc" id="L91" title="All 2 branches covered.">        target.setFlagged(!target.getFlagged());</span>
+<span class="fc" id="L92">    }</span>
 
 
     /*
     Getters and Setters
      */
     public int getSize() {
-<span class="fc" id="L100">        return this.size;</span>
+<span class="fc" id="L99">        return this.size;</span>
     }
     public Tile[][] getTiles() {
-<span class="fc" id="L103">        return this.Tiles;</span>
+<span class="fc" id="L102">        return this.Tiles;</span>
     }
     public boolean getEnd() {
-<span class="fc" id="L106">        return end;</span>
+<span class="fc" id="L105">        return end;</span>
     }
     public void setEnd(boolean end) {
-<span class="fc" id="L109">        this.end = end;</span>
-<span class="fc" id="L110">    }</span>
+<span class="fc" id="L108">        this.end = end;</span>
+<span class="fc" id="L109">    }</span>
     public int getMinecount() {
-<span class="fc" id="L112">        return this.minecount;</span>
+<span class="fc" id="L111">        return this.minecount;</span>
     }
     public int getRevealed() {
-<span class="fc" id="L115">        return revealed;</span>
+<span class="fc" id="L114">        return revealed;</span>
     }
     public void setRevealed(int revealed) {
-<span class="fc" id="L118">        this.revealed = revealed;</span>
-<span class="fc" id="L119">    }</span>
+<span class="fc" id="L117">        this.revealed = revealed;</span>
+<span class="fc" id="L118">    }</span>
     public boolean isFirstClick() {
-<span class="fc" id="L121">        return firstClick;</span>
+<span class="fc" id="L120">        return firstClick;</span>
     }
     public void setFirstClick(boolean firstClick) {
-<span class="fc" id="L124">        this.firstClick = firstClick;</span>
-<span class="fc" id="L125">    }</span>
+<span class="fc" id="L123">        this.firstClick = firstClick;</span>
+<span class="fc" id="L124">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

@@ -15,18 +15,22 @@ class BoardTest {
         Assertions.assertEquals(75, game.getMinecount(), "Mines are not 10");
 
         Tile[][] grid = game.getTiles();
-        grid[2][2].setMine(true);
-        grid[3][3].setMine(false);
+        grid[1][1].setMine(true);
+        grid[0][0].setMine(false);
 
-        game.revealTile(grid[3][3]);
+        game.revealTile(grid[0][0]);
+
+        game.flagTile(grid[1][1]);
+
+        game.revealTile(grid[2][2]);
+        Assertions.assertTrue(grid[0][0].getRevealed());
 
         game.flagTile(grid[2][2]);
 
         game.revealTile(grid[2][2]);
-
-        game.flagTile(grid[2][2]);
-
-        game.revealTile(grid[2][2]);
+        game.setFirstClick(true);
+        game.setEnd(true);
+        Assertions.assertTrue(game.getEnd(), "End found not to be true");
 
     }
 }

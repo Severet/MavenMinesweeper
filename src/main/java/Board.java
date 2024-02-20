@@ -64,7 +64,7 @@ public class Board {
     public void revealTile(Tile target) { //Reveals a tile. Should that tile have no neighboring mines then all of those tiles are revealed too
         target.setRevealed(true);
         revealed++;
-        if (target.getMine() && this.firstClick) {
+        if (target.getMine() && this.isFirstClick()) {
             target.setMine(false);
             this.firstClick = false;
         }

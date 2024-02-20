@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="355b7f2f-ecb7-453c-807b-f3139916aa3f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BoardTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/default/Board.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/default/Board.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/default/Board.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/default/Board.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/default/Tile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/default/Tile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/default/Tile.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/default/Tile.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/default/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/default/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/default/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/default/index.source.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/BoardTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/BoardTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-BoardTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-BoardTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/BoardTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/BoardTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -47,7 +47,7 @@ public class Board {
                         //If a mine is present at the coordinate then increment mines
                     }
                 }
-<span class="nc" id="L50">                catch(Exception ignored) {</span>
+<span class="fc" id="L50">                catch(Exception ignored) {</span>
                     /*
                     Edge tiles would ordinarily check outside the grid and cause an error.
                     This allows such cases to be skipped without issue
@@ -64,9 +64,9 @@ public class Board {
     public void revealTile(Tile target) { //Reveals a tile. Should that tile have no neighboring mines then all of those tiles are revealed too
 <span class="fc" id="L65">        target.setRevealed(true);</span>
 <span class="fc" id="L66">        revealed++;</span>
-<span class="pc bpc" id="L67" title="1 of 4 branches missed.">        if (target.getMine() &amp;&amp; this.firstClick) {</span>
-<span class="fc" id="L68">            target.setMine(false);</span>
-<span class="fc" id="L69">            this.firstClick = false;</span>
+<span class="pc bpc" id="L67" title="3 of 4 branches missed.">        if (target.getMine() &amp;&amp; this.isFirstClick()) {</span>
+<span class="nc" id="L68">            target.setMine(false);</span>
+<span class="nc" id="L69">            this.firstClick = false;</span>
         }
 <span class="fc" id="L71">        target.getButton().setText(String.valueOf(checkNeighbors(target)));</span>
 <span class="pc bpc" id="L72" title="1 of 2 branches missed.">        if (checkNeighbors(target)==0) { //</span>
@@ -87,7 +87,7 @@ public class Board {
         }
 <span class="fc" id="L88">    }</span>
     public void flagTile(Tile target) { //swaps the flagged state of a given tile
-<span class="fc bfc" id="L90" title="All 2 branches covered.">        target.setFlagged(!target.getFlagged());</span>
+<span class="pc bpc" id="L90" title="1 of 2 branches missed.">        target.setFlagged(!target.getFlagged());</span>
 <span class="fc" id="L91">    }</span>
 
 
@@ -101,11 +101,11 @@ public class Board {
 <span class="fc" id="L101">        return this.Tiles;</span>
     }
     public boolean getEnd() {
-<span class="nc" id="L104">        return end;</span>
+<span class="fc" id="L104">        return end;</span>
     }
     public void setEnd(boolean end) {
-<span class="nc" id="L107">        this.end = end;</span>
-<span class="nc" id="L108">    }</span>
+<span class="fc" id="L107">        this.end = end;</span>
+<span class="fc" id="L108">    }</span>
     public int getMinecount() {
 <span class="fc" id="L110">        return this.minecount;</span>
     }
@@ -119,7 +119,7 @@ public class Board {
 <span class="nc" id="L119">        return firstClick;</span>
     }
     public void setFirstClick(boolean firstClick) {
-<span class="nc" id="L122">        this.firstClick = firstClick;</span>
-<span class="nc" id="L123">    }</span>
+<span class="fc" id="L122">        this.firstClick = firstClick;</span>
+<span class="fc" id="L123">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

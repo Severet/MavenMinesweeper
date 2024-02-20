@@ -18,23 +18,23 @@ public class Board {
 <span class="fc" id="L18">    }</span>
 
     public void distributeMines(int count) { //Randomly places mines
-<span class="nc" id="L21">        HashSet&lt;int[]&gt; pos = new HashSet&lt;&gt;();</span>
+<span class="fc" id="L21">        HashSet&lt;int[]&gt; pos = new HashSet&lt;&gt;();</span>
         do {
-<span class="nc" id="L23">            int[] i = new int[2];</span>
-<span class="nc" id="L24">            i[0] = (int) (Math.random()*(this.size));</span>
-<span class="nc" id="L25">            i[1] = (int) (Math.random()*(this.size));</span>
+<span class="fc" id="L23">            int[] i = new int[2];</span>
+<span class="fc" id="L24">            i[0] = (int) (Math.random()*(this.size));</span>
+<span class="fc" id="L25">            i[1] = (int) (Math.random()*(this.size));</span>
             // Generates a set of coordinates within the bounds of the grid
             try { //Tries to add the coordinates to the hash set
-<span class="nc" id="L28">                pos.add(i);</span>
-<span class="nc" id="L29">            } catch (Exception ignored) {</span>
+<span class="fc" id="L28">                pos.add(i);</span>
+<span class="fc" id="L29">                this.minecount++;</span>
+<span class="nc" id="L30">            } catch (Exception ignored) {</span>
                 //If the coordinates are a duplicate then the program will not add or crash as the exception is handled
-<span class="nc" id="L31">            }</span>
-<span class="nc bnc" id="L32" title="All 2 branches missed.">        } while (pos.size()&lt;count); // Continues generating coords and adding them if unique until the count quota has been met</span>
-<span class="nc" id="L33">        this.minecount = count;</span>
-<span class="nc bnc" id="L34" title="All 2 branches missed.">        for (int[] m : pos) {</span>
-<span class="nc" id="L35">            this.Tiles[m[0]][m[1]].setMine(true); //sets the Mine boolean of the tiles at all generated coordinates to true</span>
-<span class="nc" id="L36">        }</span>
-<span class="nc" id="L37">    }</span>
+<span class="fc" id="L32">            }</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">        } while (pos.size()&lt;count); // Continues generating coords and adding them if unique until the count quota has been met</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        for (int[] m : pos) {</span>
+<span class="fc" id="L35">            this.Tiles[m[0]][m[1]].setMine(true); //sets the Mine boolean of the tiles at all generated coordinates to true</span>
+<span class="fc" id="L36">        }</span>
+<span class="fc" id="L37">    }</span>
 
 
     public int checkNeighbors(Tile target) { //Used for calculating the number of mines adjacent to a Tile
@@ -107,7 +107,7 @@ public class Board {
 <span class="nc" id="L107">        this.end = end;</span>
 <span class="nc" id="L108">    }</span>
     public int getMinecount() {
-<span class="nc" id="L110">        return this.minecount;</span>
+<span class="fc" id="L110">        return this.minecount;</span>
     }
     public int getRevealed() {
 <span class="nc" id="L113">        return revealed;</span>

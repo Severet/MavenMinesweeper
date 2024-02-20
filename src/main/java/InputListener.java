@@ -44,21 +44,21 @@ public class InputListener implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-
+        //Method must be implemented but functionality is not required
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-
+        //Method must be implemented but functionality is not required
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-
+        //Method must be implemented but functionality is not required
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-
+        //Method must be implemented but functionality is not required
     }
 }

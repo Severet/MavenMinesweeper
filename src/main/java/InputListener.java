@@ -23,14 +23,12 @@ public class InputListener implements MouseListener {
                     b.setText(String.valueOf(game.checkNeighbors(target)));
                 }
             }
-        } else if (e.getButton()==3) { //Right-click behaviour
-            if (!target.getRevealed()) { //Tile must not be revealed for a right click to work
-                game.flagTile(target);
-                if (target.getFlagged()) {
-                    b.setText("⚑");
-                } else if (!target.getFlagged()) {
-                    b.setText("");
-                }
+        } else if (e.getButton()==3 && !target.getRevealed()) { //Right-click behaviour//Tile must not be revealed for a right click to work
+            game.flagTile(target);
+            if (target.getFlagged()) {
+                b.setText("⚑");
+            } else if (!target.getFlagged()) {
+                b.setText("");
             }
         }
         if (game.getRevealed() == -1) { //Detects if a mine has been revealed

@@ -23,39 +23,37 @@ public class InputListener implements MouseListener {
 <span class="nc" id="L23">                    b.setText(String.valueOf(game.checkNeighbors(target)));</span>
                 }
             }
-<span class="nc bnc" id="L26" title="All 2 branches missed.">        } else if (e.getButton()==3) { //Right-click behaviour</span>
-<span class="nc bnc" id="L27" title="All 2 branches missed.">            if (!target.getRevealed()) { //Tile must not be revealed for a right click to work</span>
-<span class="nc" id="L28">                game.flagTile(target);</span>
-<span class="nc bnc" id="L29" title="All 2 branches missed.">                if (target.getFlagged()) {</span>
-<span class="nc" id="L30">                    b.setText(&quot;⚑&quot;);</span>
-<span class="nc bnc" id="L31" title="All 2 branches missed.">                } else if (!target.getFlagged()) {</span>
-<span class="nc" id="L32">                    b.setText(&quot;&quot;);</span>
-                }
+<span class="nc bnc" id="L26" title="All 4 branches missed.">        } else if (e.getButton()==3 &amp;&amp; !target.getRevealed()) { //Right-click behaviour//Tile must not be revealed for a right click to work</span>
+<span class="nc" id="L27">            game.flagTile(target);</span>
+<span class="nc bnc" id="L28" title="All 2 branches missed.">            if (target.getFlagged()) {</span>
+<span class="nc" id="L29">                b.setText(&quot;⚑&quot;);</span>
+<span class="nc bnc" id="L30" title="All 2 branches missed.">            } else if (!target.getFlagged()) {</span>
+<span class="nc" id="L31">                b.setText(&quot;&quot;);</span>
             }
         }
-<span class="nc bnc" id="L36" title="All 2 branches missed.">        if (game.getRevealed() == -1) { //Detects if a mine has been revealed</span>
-<span class="nc" id="L37">            JOptionPane.showMessageDialog(null, &quot;YOU LOSE :(&quot;);</span>
-<span class="nc" id="L38">            System.exit(0);</span>
-<span class="nc bnc" id="L39" title="All 2 branches missed.">        } else if (game.getRevealed() == (game.getSize() * game.getSize())-game.getMinecount()) { //Detects if any safe tiles remain</span>
-<span class="nc" id="L40">            JOptionPane.showMessageDialog(null, &quot;YOU WIN B)&quot;);</span>
-<span class="nc" id="L41">            System.exit(0);</span>
+<span class="nc bnc" id="L34" title="All 2 branches missed.">        if (game.getRevealed() == -1) { //Detects if a mine has been revealed</span>
+<span class="nc" id="L35">            JOptionPane.showMessageDialog(null, &quot;YOU LOSE :(&quot;);</span>
+<span class="nc" id="L36">            System.exit(0);</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">        } else if (game.getRevealed() == (game.getSize() * game.getSize())-game.getMinecount()) { //Detects if any safe tiles remain</span>
+<span class="nc" id="L38">            JOptionPane.showMessageDialog(null, &quot;YOU WIN B)&quot;);</span>
+<span class="nc" id="L39">            System.exit(0);</span>
         }
-<span class="nc" id="L43">    }</span>
+<span class="nc" id="L41">    }</span>
 
     @Override
     public void mousePressed(MouseEvent e) {// Method functionality is not required
-<span class="nc" id="L47">    }</span>
+<span class="nc" id="L45">    }</span>
 
     @Override
     public void mouseReleased(MouseEvent e) {// Method functionality is not required
-<span class="nc" id="L51">    }</span>
+<span class="nc" id="L49">    }</span>
 
     @Override
     public void mouseEntered(MouseEvent e) {// Method functionality is not required
-<span class="nc" id="L55">    }</span>
+<span class="nc" id="L53">    }</span>
 
     @Override
     public void mouseExited(MouseEvent e) {// Method functionality is not required
-<span class="nc" id="L59">    }</span>
+<span class="nc" id="L57">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

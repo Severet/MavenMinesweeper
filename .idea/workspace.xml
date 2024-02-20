@@ -5,33 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="355b7f2f-ecb7-453c-807b-f3139916aa3f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/SetupTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SetupTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TileTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/RandomNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/RandomNumber.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/default/Board.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/default/Board.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/default/Board.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/default/Board.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/default/Main.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/default/Main.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/default/RandomNumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/default/RandomNumber.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/default/RandomNumber.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/default/RandomNumber.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/default/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/default/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/default/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/default/index.source.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/BoardTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/BoardTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/SetupTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/SetupTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-BoardTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-BoardTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-SetupTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-SetupTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TileTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TileTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TileTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TileTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/SetupTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/SetupTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/TileTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TileTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InputListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InputListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

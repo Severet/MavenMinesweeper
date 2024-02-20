@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Random;
 
 public class Board {
     private int revealed = 0; //This represents the number of discovered safe tiles.
@@ -21,8 +22,9 @@ public class Board {
         HashSet<int[]> pos = new HashSet<>();
         do {
             int[] i = new int[2];
-            i[0] = (int) (Math.random()*(this.size));
-            i[1] = (int) (Math.random()*(this.size));
+            Random r = new Random();
+            i[0] = (r.nextInt(this.size));
+            i[1] = (r.nextInt(this.size));
             // Generates a set of coordinates within the bounds of the grid
             try { //Tries to add the coordinates to the hash set
                 pos.add(i);

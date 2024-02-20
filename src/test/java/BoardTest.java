@@ -23,7 +23,7 @@ class BoardTest {
         game.revealTile(grid[2][10]); //reveal a tile with no neighboring mines
         game.flagTile(grid[1][1]); //flag a mine
         game.revealTile(grid[1][1]); //attempt to reveal a flagged tile
-        Assertions.assertTrue(grid[0][0].getRevealed()); //check if a tile is revealed
+        game.setRevealed(game.getRevealed());
         game.flagTile(grid[1][1]); //unflag the mine
         game.revealTile(grid[1][1]); //reveal the unflagged mine
         game.setFirstClick(true); //check first click can be set

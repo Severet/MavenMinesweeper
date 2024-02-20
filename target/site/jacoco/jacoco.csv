@@ -1,7 +1,7 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-OOPExcercises,default,Board,8,263,0,24,4,55,2,25,2,13
+OOPExcercises,default,Board,1,270,0,24,1,59,0,27,0,15
 OOPExcercises,default,InputListener,108,10,20,0,27,4,15,1,5,1
-OOPExcercises,default,StartListener,68,0,7,0,21,0,6,0,2,0
+OOPExcercises,default,StartListener,62,6,7,0,18,3,5,1,1,1
 OOPExcercises,default,Tile,0,244,0,2,0,38,0,18,0,17
-OOPExcercises,default,GUI,317,0,20,0,73,0,18,0,8,0
+OOPExcercises,default,GUI,176,141,20,0,39,34,14,4,4,4
 OOPExcercises,default,Main,10,0,0,0,4,0,2,0,2,0

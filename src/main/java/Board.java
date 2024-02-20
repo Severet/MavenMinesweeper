@@ -1,6 +1,4 @@
 import java.util.HashSet;
-import java.util.Random;
-
 public class Board {
     private int revealed = 0; //This represents the number of discovered safe tiles.
     private int size;

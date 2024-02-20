@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RandomNumber.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">OOPExcercises</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">RandomNumber.java</span></div><h1>RandomNumber.java</h1><pre class="source lang-java linenums">import java.util.Random;
 
-<span class="nc" id="L3">public class RandomNumber {</span>
+public class RandomNumber {
 <span class="fc" id="L4">    private static final Random r = new Random();</span>
+<span class="nc" id="L5">    private RandomNumber() {</span>
+<span class="nc" id="L6">        throw new IllegalStateException(&quot;Utility class&quot;);</span>
+    }
     public static int generateInt(int limit) {
-<span class="fc" id="L6">        return r.nextInt(limit);</span>
+<span class="fc" id="L9">        return r.nextInt(limit);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

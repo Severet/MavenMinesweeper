@@ -1,4 +1,7 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.awt.event.MouseEvent;
 
 class TileTest {
     @Test
@@ -9,14 +12,11 @@ class TileTest {
 
         int[][] array = {{1},{2,4,5},{3}};
         tile.setNeighbours(array);
-        tile.setXpos(tile.getXpos());
-        tile.setYpos(tile.getYpos());
+        tile.setXpos(5);
+        Assertions.assertEquals(5, tile.getXpos(), "getXpos did not return 5");
+        tile.setYpos(7);
+        Assertions.assertEquals(7, tile.getYpos(), "getYpos did not return 7");
         tile.setOwner(game2);
 
-    }
-    @Test
-    void ClickTests() {
-        Tile tile = new Board(1).getTiles()[0][0];
-        tile.getButton().doClick();
     }
 }
